@@ -14,7 +14,7 @@
 # Purple Blinking .........Payload Completed
 
 #Set Red LED to indicate Starting of Script
-LED R 50
+LED STAGE1
 
 #Set ATTACKMODE to HID and Storage to be able to transfer the certificate
 ATTACKMODE HID STORAGE
@@ -52,14 +52,5 @@ Q ALT y
 Q DELAY 500
 
 #Unmount the USB Drive.
-Q STRING \$driveEject = New-Object -comObject Shell.Application
-Q ENTER
-Q STRING \$driveEject.Namespace\(17\).ParseName\(\"\$driveLetter\"\).InvokeVerb\(\"Eject\"\)
-Q ENTER
-Q DELAY 500
-Q ALT t
-Q DELAY 500
-Q STRING EXIT
-Q ENTER
-sync
-LED R B 100
+ATTACKMODE OFF
+LED FINISH
